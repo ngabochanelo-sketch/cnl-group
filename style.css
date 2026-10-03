@@ -1,0 +1,656 @@
+                    * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                    }
+                    
+                    body {
+                        font-family: Arial, sans-serif;
+                        line-height: 1.6;
+                        background-color: #f5f5f5;
+                        color: #222;
+                    }
+                    /* Header */
+                    
+                    header {
+                        background: linear-gradient( 180deg, #050505 0%, #111827 55%, #080c14 100%);
+                        color: white;
+                        padding: 20px 8%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        font-family: "Berlin Sans FB", sans-serif;
+                    }
+                    
+                    header h1 {
+                        font-size: 28px;
+                    }
+                    
+                    nav {
+                        width: fit-content;
+                        margin-left: auto;
+                        margin-right: 30px;
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        background: linear-gradient( 180deg, #050505 0%, #111827 55%, #080c14 100%);
+                        padding: 1px 2px;
+                        border: 1px solid rgba(0, 170, 255, 0.35);
+                        border-radius: 40px;
+                        box-shadow: 0 0 15px rgba(0, 170, 255, 0.12);
+                    }
+                    /* Navigation links */
+                    
+                    nav a {
+                        position: relative;
+                        color: white;
+                        text-decoration: none;
+                        margin-left: 0;
+                        font-family: "Berlin Sans FB", sans-serif;
+                        font-size: 16px;
+                        padding: 11px 18px;
+                        border-radius: 40px;
+                        transition: all 0.3s ease;
+                    }
+                    /* Hover */
+                    
+                    nav a:hover {
+                        color: #00aaff;
+                        background-color: rgba(0, 170, 255, 0.12);
+                        box-shadow: 0 0 12px rgba(0, 170, 255, 0.15);
+                        transform: translateY(-2px);
+                    }
+                    /* Small glowing line */
+                    
+                    nav a::after {
+                        content: "";
+                        position: absolute;
+                        left: 50%;
+                        bottom: 5px;
+                        width: 0;
+                        height: 2px;
+                        background: #00aaff;
+                        box-shadow: 0 0 8px #00aaff;
+                        transform: translateX(-50%);
+                        transition: width 0.3s ease;
+                    }
+                    
+                    nav a:hover::after {
+                        width: 50%;
+                    }
+                    /* Hero */
+                    
+                    .hero {
+                        min-height: 500px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        padding: 40px;
+                        background: linear-gradient( 180deg, #050505 0%, #111827 55%, #080c14 100%);
+                        color: white;
+                        font-family: "Berlin Sans FB", sans-serif;
+                    }
+                    
+                    .hero h2 {
+                        font-size: 50px;
+                        margin-bottom: 15px;
+                    }
+                    
+                    .hero p {
+                        font-size: 20px;
+                        margin-bottom: 25px;
+                    }
+                    
+                    .get-started {
+                        display: inline-block;
+                        padding: 12px 25px;
+                        border: none;
+                        border-radius: 20px 5px 20px 5px;
+                        background-color: hsl(267, 100%, 50%);
+                        color: white;
+                        font-size: 16px;
+                        text-decoration: none;
+                        cursor: pointer;
+                        transition: 0.3s;
+                    }
+                    
+                    .get-started:hover {
+                        background-color: #0088cc;
+                        transform: translateY(-2px);
+                    }
+                    
+                    button:hover {
+                        background-color: #7700cc;
+                    }
+                    /* Sections */
+                    
+                    .about,
+                    .services {
+                        padding: 70px 8%;
+                        text-align: center;
+                    }
+                    
+                    .about h2,
+                    .services h2 {
+                        font-size: 35px;
+                        margin-bottom: 20px;
+                    }
+                    /* Cards */
+                    
+                    .cards {
+                        display: flex;
+                        gap: 25px;
+                        justify-content: center;
+                        margin-top: 35px;
+                    }
+                    
+                    .card {
+                        background-color: white;
+                        padding: 30px;
+                        width: 30%;
+                        border-radius: 10px;
+                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                    }
+                    
+                    .card h3 {
+                        margin-bottom: 15px;
+                    }
+                    /* Footer */
+                    
+                    footer {
+                        background-color: #111;
+                        color: white;
+                        text-align: center;
+                        padding: 25px;
+                    }
+                    /* Mobile */
+                    
+                    @media (max-width: 768px) {
+                        header {
+                            flex-direction: column;
+                            gap: 15px;
+                        }
+                        nav a {
+                            margin: 0 8px;
+                        }
+                        .hero h2 {
+                            font-size: 35px;
+                        }
+                        .cards {
+                            flex-direction: column;
+                        }
+                        .card {
+                            width: 100%;
+                        }
+                    }
+                    
+                    .site-logo {
+                        position: fixed;
+                        top: 20px;
+                        left: 25px;
+                        z-index: 1000;
+                        display: block;
+                    }
+                    
+                    .site-logo img {
+                        width: 100px;
+                        height: auto;
+                        display: block;
+                        transition: 0.3s ease;
+                    }
+                    
+                    .site-logo:hover img {
+                        transform: scale(1.05);
+                    }
+                    /* =========================================
+   CNL GROUP - CONTACT SECTION
+   ========================================= */
+                    
+                    .contact-section {
+                        position: relative;
+                        width: 100%;
+                        padding: 100px 30px 30px;
+                        background: linear-gradient( 180deg, #050505 0%, #111827 50%, #050505 100%);
+                        color: white;
+                        overflow: hidden;
+                    }
+                    /* Blue decorative glow */
+                    
+                    .contact-section::before {
+                        content: "";
+                        position: absolute;
+                        width: 400px;
+                        height: 400px;
+                        top: 50px;
+                        left: -200px;
+                        background: rgba(0, 170, 255, 0.08);
+                        border-radius: 50%;
+                        filter: blur(80px);
+                    }
+                    /* Main container */
+                    
+                    .contact-container {
+                        position: relative;
+                        max-width: 1100px;
+                        margin: auto;
+                    }
+                    /* Heading */
+                    
+                    .contact-heading {
+                        text-align: center;
+                        max-width: 700px;
+                        margin: 0 auto 55px;
+                    }
+                    
+                    .contact-heading span {
+                        color: #00aaff;
+                        font-size: 13px;
+                        letter-spacing: 4px;
+                        font-family: "Berlin Sans FB", sans-serif;
+                    }
+                    
+                    .contact-heading h2 {
+                        margin-top: 12px;
+                        font-size: 42px;
+                        font-family: "Berlin Sans FB", sans-serif;
+                    }
+                    
+                    .contact-heading h2 strong {
+                        color: #00aaff;
+                    }
+                    
+                    .contact-heading p {
+                        margin-top: 15px;
+                        color: #aeb7bf;
+                        font-size: 16px;
+                        line-height: 1.7;
+                    }
+                    /* Contact cards */
+                    
+                    .contact-content {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 25px;
+                        max-width: 850px;
+                        margin: auto;
+                    }
+                    
+                    .contact-card {
+                        position: relative;
+                        padding: 35px;
+                        background: #222;
+                        border: 1px solid rgba(0, 170, 255, 0.25);
+                        border-radius: 25px;
+                        text-align: center;
+                        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(0, 170, 255, 0.03);
+                        transition: 0.3s ease;
+                    }
+                    
+                    .contact-card:hover {
+                        transform: translateY(-7px);
+                        border-color: rgba(0, 170, 255, 0.65);
+                        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 170, 255, 0.12);
+                    }
+                    /* Icon */
+                    
+                    .contact-icon {
+                        width: 55px;
+                        height: 55px;
+                        margin: 0 auto 20px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: #00aaff;
+                        border: 1px solid rgba(0, 170, 255, 0.4);
+                        border-radius: 15px;
+                        background: rgba(0, 170, 255, 0.08);
+                        font-size: 24px;
+                        box-shadow: 0 0 15px rgba(0, 170, 255, 0.08);
+                    }
+                    
+                    .contact-card h3 {
+                        font-family: "Berlin Sans FB", sans-serif;
+                        font-size: 14px;
+                        color: #00aaff;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+                    }
+                    
+                    .contact-card h4 {
+                        margin-top: 8px;
+                        font-size: 25px;
+                        font-family: "Berlin Sans FB", sans-serif;
+                    }
+                    
+                    .contact-card p {
+                        margin: 15px 0;
+                        color: #aeb7bf;
+                        line-height: 1.6;
+                    }
+                    /* CEO email */
+                    
+                    .ceo-email {
+                        display: block;
+                        color: #00aaff;
+                        text-decoration: none;
+                        font-size: 15px;
+                        margin: 15px 0;
+                        transition: 0.3s ease;
+                    }
+                    
+                    .ceo-email:hover {
+                        color: white;
+                        text-shadow: 0 0 10px #00aaff;
+                    }
+                    /* Email button */
+                    
+                    .contact-button {
+                        display: inline-block;
+                        margin-top: 10px;
+                        padding: 11px 22px;
+                        color: white;
+                        text-decoration: none;
+                        background: #00aaff;
+                        border-radius: 20px 5px 20px 5px;
+                        font-family: "Berlin Sans FB", sans-serif;
+                        transition: 0.3s ease;
+                    }
+                    
+                    .contact-button:hover {
+                        background: #0088cc;
+                        transform: translateY(-2px);
+                        box-shadow: 0 8px 20px rgba(0, 170, 255, 0.3);
+                    }
+                    /* Reserved contact space */
+                    
+                    .reserved-card {
+                        border-style: dashed;
+                    }
+                    
+                    .reserved-space {
+                        margin-top: 20px;
+                        padding: 15px;
+                        border: 1px dashed rgba(0, 170, 255, 0.3);
+                        border-radius: 12px;
+                        color: #707b84;
+                        font-size: 13px;
+                    }
+                    /* Other contact methods */
+                    
+                    .future-contacts {
+                        margin-top: 70px;
+                        text-align: center;
+                    }
+                    
+                    .future-contacts>h3 {
+                        font-family: "Berlin Sans FB", sans-serif;
+                        font-size: 25px;
+                        margin-bottom: 30px;
+                    }
+                    
+                    .future-contact-grid {
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        gap: 15px;
+                    }
+                    
+                    .future-box {
+                        padding: 25px 15px;
+                        background: rgba(34, 34, 34, 0.8);
+                        border: 1px solid rgba(255, 255, 255, 0.08);
+                        border-radius: 15px;
+                        transition: 0.3s ease;
+                    }
+                    
+                    .future-box:hover {
+                        border-color: rgba(0, 170, 255, 0.4);
+                        background: rgba(0, 170, 255, 0.05);
+                        transform: translateY(-4px);
+                    }
+                    
+                    .future-box span {
+                        display: block;
+                        margin-bottom: 10px;
+                        color: #00aaff;
+                        font-size: 24px;
+                    }
+                    
+                    .future-box h4 {
+                        font-family: "Berlin Sans FB", sans-serif;
+                        margin-bottom: 8px;
+                    }
+                    
+                    .future-box p {
+                        color: #777f86;
+                        font-size: 13px;
+                    }
+                    /* Bottom copyright */
+                    
+                    .contact-footer {
+                        margin-top: 70px;
+                        padding-top: 25px;
+                        border-top: 1px solid rgba(255, 255, 255, 0.08);
+                        text-align: center;
+                    }
+                    
+                    .contact-footer p {
+                        color: #68727a;
+                        font-size: 13px;
+                    }
+                    /* =========================================
+   MOBILE
+   ========================================= */
+                    
+                    @media (max-width: 750px) {
+                        .contact-section {
+                            padding: 80px 20px 25px;
+                        }
+                        .contact-heading h2 {
+                            font-size: 32px;
+                        }
+                        .contact-content {
+                            grid-template-columns: 1fr;
+                        }
+                        .future-contact-grid {
+                            grid-template-columns: repeat(2, 1fr);
+                        }
+                    }
+                    
+                    @media (max-width: 450px) {
+                        .future-contact-grid {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+                    
+                    html {
+                        scroll-behavior: smooth;
+                    }
+                    /* =========================================
+   CNL GROUP AI CHAT
+   ========================================= */
+                    
+                    .cnl-chat {
+                        position: fixed;
+                        right: 25px;
+                        bottom: 25px;
+                        z-index: 10000;
+                        font-family: "Berlin Sans FB", sans-serif;
+                    }
+                    
+                    .chat-toggle {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        padding: 12px 17px;
+                        border: 1px solid rgba(0, 170, 255, 0.45);
+                        border-radius: 20px 5px 20px 5px;
+                        background: linear-gradient( 180deg, #050505 0%, #111827 55%, #080c14 100%);
+                        color: white;
+                        cursor: pointer;
+                        font-family: inherit;
+                        font-size: 15px;
+                        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.45), 0 0 15px rgba(0, 170, 255, 0.12);
+                        transition: 0.3s ease;
+                    }
+                    
+                    .chat-toggle:hover {
+                        color: #00aaff;
+                        border-color: #00aaff;
+                        transform: translateY(-3px);
+                        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 170, 255, 0.2);
+                    }
+                    
+                    .chat-icon {
+                        color: #00aaff;
+                        font-size: 20px;
+                    }
+                    
+                    .chat-window {
+                        position: absolute;
+                        right: 0;
+                        bottom: 65px;
+                        width: 350px;
+                        height: 470px;
+                        display: none;
+                        flex-direction: column;
+                        background: linear-gradient( 180deg, #050505 0%, #111827 55%, #080c14 100%);
+                        border: 1px solid rgba(0, 170, 255, 0.3);
+                        border-radius: 20px 5px 20px 5px;
+                        overflow: hidden;
+                        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 170, 255, 0.1);
+                    }
+                    
+                    .chat-window.active {
+                        display: flex;
+                    }
+                    
+                    .chat-header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 18px;
+                        background: linear-gradient( 180deg, #050505 0%, #111827 55%, #080c14 100%);
+                        border-bottom: 1px solid rgba(0, 170, 255, 0.2);
+                    }
+                    
+                    .chat-header strong {
+                        display: block;
+                        color: #00aaff;
+                        font-size: 16px;
+                    }
+                    
+                    .chat-header span {
+                        display: block;
+                        margin-top: 3px;
+                        color: #8d98a2;
+                        font-size: 12px;
+                    }
+                    
+                    #chatClose {
+                        border: none;
+                        background: transparent;
+                        color: white;
+                        font-size: 25px;
+                        cursor: pointer;
+                    }
+                    
+                    #chatClose:hover {
+                        color: #00aaff;
+                    }
+                    
+                    .chat-messages {
+                        flex: 1;
+                        padding: 18px;
+                        overflow-y: auto;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 12px;
+                    }
+                    
+                    .bot-message,
+                    .user-message {
+                        max-width: 82%;
+                        padding: 11px 13px;
+                        border-radius: 20px 5px 20px 5px;
+                        font-family: Arial, sans-serif;
+                        font-size: 14px;
+                        line-height: 1.5;
+                    }
+                    
+                    .bot-message {
+                        align-self: flex-start;
+                        background: #111827;
+                        color: white;
+                        border-left: 2px solid #00aaff;
+                    }
+                    
+                    .user-message {
+                        align-self: flex-end;
+                        background: #00aaff;
+                        color: white;
+                    }
+                    
+                    .chat-input-area {
+                        display: flex;
+                        gap: 8px;
+                        padding: 12px;
+                        background: linear-gradient( 180deg, #050505 0%, #111827 55%, #080c14 100%);
+                        border-top: 1px solid rgba(0, 170, 255, 0.15);
+                    }
+                    
+                    #chatInput {
+                        flex: 1;
+                        min-width: 0;
+                        padding: 11px 13px;
+                        border: 1px solid rgba(255, 255, 255, 0.15);
+                        border-radius: 20px 5px 20px 5px;
+                        outline: none;
+                        background: #111827;
+                        color: white;
+                        font-family: Arial, sans-serif;
+                    }
+                    
+                    #chatInput:focus {
+                        border-color: #00aaff;
+                    }
+                    
+                    #chatInput::placeholder {
+                        color: #707b84;
+                    }
+                    
+                    #chatSend {
+                        width: 44px;
+                        border: none;
+                        border-radius: 20px 5px 20px 5px;
+                        background: #00aaff;
+                        color: white;
+                        cursor: pointer;
+                        font-size: 18px;
+                    }
+                    
+                    #chatSend:hover {
+                        background: #0088cc;
+                    }
+                    
+                    @media (max-width: 500px) {
+                        .cnl-chat {
+                            right: 15px;
+                            bottom: 15px;
+                        }
+                        .chat-window {
+                            width: calc(100vw - 30px);
+                            height: 450px;
+                        }
+                        .chat-label {
+                            display: none;
+                        }
+                        .chat-toggle {
+                            width: 52px;
+                            height: 52px;
+                            justify-content: center;
+                            padding: 0;
+                            border-radius: 50%;
+                        }
+                    }
